@@ -7,14 +7,56 @@
 }
 
 body {
+  margin: 0px auto;
   background-image: linear-gradient(to right, white, #e9f1ff);
   color: #0c132c;
   font-family: 'Nunito Sans', sans-serif;
 }
 
+header, section {
+	width: 1040px;
+	margin: auto;
+}
+
+h1, h2 {
+	font-weight: 400;
+}
+
 .topNavbar {
-	display:inline-block;
-	max-width: 1040px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	width: 100%;
-	margin: 0, 16, 16, 0;
+	max-width: 1040px;
+}
+
+button {
+	padding: 12px 32px;
+	font-family: inherit;
+	font-size: 16px;
+	background-color: transparent;
+	border-width: 1px;
+	border-color: #0c132c;
+}
+
+.buttonPrimary {
+	padding: 24px 64px;
+	border-radius: 12px;
+	background-color: #0c132c;
+	color: white;
+}	
+
+.buttonNavbar {
+	padding: 12px 32px;
+	border: none;
+}
+
+
+
+#Hero {
+	display: flex;
+	align-items: center;
+	align-content: space-between;
+	margin: 96px 0 0 96px;
+	height: 90%;
 }
