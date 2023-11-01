@@ -1,16 +1,22 @@
+:root {
+  --primary-color: #0c132c;
+  --primary-hover: #1c2a5c;
+  --primary-pressed: #2f407b;
+}
 
 @font-face {
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: 400;
-  src: url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 400;
+	src: url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
 }
 
 body {
-  margin: 0px auto;
-  background-image: linear-gradient(to right, white, #e9f1ff);
-  color: #0c132c;
-  font-family: 'Nunito Sans', sans-serif;
+	min-height: 100vh;
+	margin: 0px auto;
+	background-image: linear-gradient(to right, white, #e9f1ff);
+	color: var(--primary-color);
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 header, section {
@@ -18,7 +24,19 @@ header, section {
 	margin: auto;
 }
 
-h1, h2 {
+/* why is everything bold without this? */
+h1{
+	font-size: 32px;
+	font-weight: 200;
+}
+
+h2 {
+	font-size: 28px;
+	font-weight: 200;
+}
+
+p {
+	font-size: 20px;
 	font-weight: 400;
 }
 
@@ -30,31 +48,65 @@ h1, h2 {
 	max-width: 1040px;
 }
 
-button {
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.button {
+	text-decoration: none;
+	color: var(--primary-color);
 	padding: 12px 32px;
 	font-family: inherit;
 	font-size: 16px;
 	background-color: transparent;
 	border-width: 1px;
-	border-color: #0c132c;
+	border-color: var(--primary-color);
+	&:hover {color: var(--primary-hover);
+	}
+	&:active {color: var(--primary-pressed);
+	}
 }
 
 .buttonPrimary {
 	padding: 24px 64px;
 	border-radius: 12px;
-	background-color: #0c132c;
+	background-color: var(--primary-color);
 	color: white;
+	&:hover {color: white; background-color: var(--primary-hover);
+	}
+	&:active {background-color: var(--primary-pressed);
+	}
 }	
 
 .buttonNavbar {
 	padding: 12px 32px;
 	border: none;
 }
-
-
-
+ 
+section {
+	min-height: 80vh;
+	padding: 96px 0 0 96px;
+}
+ 
 #Hero {
+	display: flex;]
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+	margin: 96px 0 0 96px;
+	height: 80vh;
+}
+
+#AboutMe {
+	
+}
+
+#AboutMeFlex {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	align-content: space-between;
 	margin: 96px 0 0 96px;

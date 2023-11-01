@@ -10,32 +10,49 @@
 			<div class="topNavbar">
 					<img src="images & icons/Ajanas logo.svg">
 				<nav>
-					<button class="buttonNavbar">About Me</button>
-					<button class="buttonNavbar">My projects</button>
-					<button class="buttonNavbar">Resume</button>
-					<button class="buttonNavbar buttonPrimary">Contact me</button>
+					<a class="button buttonNavbar" href="#AboutMe">About Me</a>
+					<a class="button buttonNavbar" href="#MyProjects">My projects</a>
+					<a class="button buttonNavbar">Resume</a>
+					<a class="button buttonNavbar buttonPrimary">Contact me</a>
 				</nav>
 			</div>
-			<br>
 			<div id="Hero">
 				<div style="float: left; flex: 5/12;">
 					<img src="images & icons/hero-photo.png" style= "width: 320px;">
 				</div>
 				<div style="float: right; flex: 7/12;">
 					<h1>Hello! My name is Antoni Janas.</h1>
-					<h2>I'm a <span style="font-weight: 600;">Junior UX/UI Designer</span></h2>
+					<h2>I'm a <strong>Junior UX/UI Designer</strong></h2>
 					<br>
-					<button class="buttonPrimary">Find out more!</button>
+					<a class="button buttonPrimary" href="#AboutMe">Find out more!</a>
 				</div>
 			</div>
 		</header>
-		<section id="AboutMe" style="text-align: center;">
-		<h1>About Me</h1>
-		<br>
-		<p>Lorem ipsum dolor sit amet.</p>
+		<section id="AboutMe">
+			<h1 style="text-align: center;">About Me</h1>
+			<br>
+			<div id="AboutMeFlex">
+				<div style= "float: left; flex: 8/12; flex-direction: column; justify-content: space-around;">
+					<h2>Who am I?</h2>
+					<p><strong>Product Design and Development graduate</strong> at <abbr><strong>AGH UST</strong></abbr> in Cracow.
+					<br>I spent last two years working as a UX Designer at Nokia.
+					<br>I was a chairman for UXberries – the first student organization
+					at AGH dedicated to User Experience.</p>
+					<br>
+					<!-- TBD center this button -->
+					<a class="button buttonPrimary">See my projects</a> 
+				</div>
+				<div style="float: right; flex: 4/12;">
+					<img src="images & icons/csux-ajanas.png" style="width: 240px;">
+				</div>
+			</div>
+		</section>
+		<section id="MyProjects">
+			<h1 style="text-align: center;">My Projects</h1>
+			<p> TBD </p>
 		</section>
 		<footer style="text-align: center;">
-			<button> test </button>
+			<a class="button"> test </a>
 			<h2>tu będzie stopka</h2>
 		</footer>
 	</body>	
