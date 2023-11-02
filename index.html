@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="widthe=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	
+	<body>
+		<header>
+			<div class="topNavbar">
+					<a href="#"><img src="images & icons/Ajanas logo.svg" style="height: 48px"></a>
+				<nav>
+					<a class="button buttonNavbar" href="#AboutMe">About Me</a>
+					<a class="button buttonNavbar" href="#MyProjects">My projects</a>
+					<a class="button buttonNavbar">Resume</a>
+					<a class="button buttonNavbar buttonPrimary" href="#Contact">Contact me</a>
+				</nav>
+			</div>
+			<div id="Hero">
+				<div style="float: left; flex: 5/12;">
+					<img src="images & icons/hero-photo.png" style= "width: 320px;">
+				</div>
+				<div style="float: right; flex: 7/12;">
+					<h1>Hello! My name is Antoni Janas.</h1>
+					<h2>I'm a <strong>Junior UX/UI Designer</strong></h2>
+					<br>
+					<a class="button buttonPrimary" href="#AboutMe">Find out more!</a>
+				</div>
+			</div>
+		</header>
+		<section id="AboutMe">
+			<h1>About Me</h1>
+			<br>
+			<div id="AboutMeFlex">
+				<div style= "float: left; flex: 8/12; flex-direction: column; justify-content: space-around;">
+					<h2>Who am I?</h2>
+					<p><strong>Product Design and Development graduate</strong> at <abbr><strong>AGH UST</strong></abbr> in Cracow.
+					<br>I spent last two years working as a UX Designer at Nokia.
+					<br>I was a chairman for UXberries – the first student organization
+					at AGH dedicated to User Experience.</p>
+					<br>
+					<!-- TBD center this button -->
+					<a class="button buttonPrimary">See my projects</a> 
+				</div>
+				<div style="float: right; flex: 4/12;">
+					<img src="images & icons/csux-ajanas.png" style="width: 240px;">
+				</div>
+			</div>
+		</section>
+		<section id="MyProjects">
+			<h1>My Projects</h1>
+			<p> TBD </p>
+		</section>
+		<section id="Contact">
+			<h1>Contact me</h1>
+			<div class="container">	
+				<form action="" method="post" class="form">
+					<div class="form-group">
+						<label for="name" class="form-label">Name:</label>
+						<input type="text" class="form-control" id="name" name="name" placeholder="Genezyp Kapen" tabindex="1" required>
+					</div>
+					<div class="form-group">
+						<label for="e-mail" class="form-label">Email:</label>
+						<input type="email" class="form-control" id="email" name="email" placeholder="genezyp.kapen@mail.com" tabindex="2" required>
+					</div>
+					<div class="form-group">
+						<label for="message" class="form-label">Your message:</label>
+						<textarea class="form-control" rows="5" cols="50" id="message" name="message" placeholder="Write your message here" tabindex="3" required></textarea>
+					</div>
+					<div>
+						<button type="submit" class="buttonPrimary">Send</button>
+					</div>
+				</form>
+		</section>
+		<footer>
+			<a class="button"> test </a>
+			<h2>tu będzie stopka</h2>
+		</footer>
+	</body>	
+</html>
