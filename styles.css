@@ -2,6 +2,8 @@
   --primary-color: #0c132c;
   --primary-hover: #1c2a5c;
   --primary-pressed: #2f407b;
+  --error: rgb(201, 28, 28);
+  --success: #14a514;
   --bg-gradient: linear-gradient(to right, white, #e9f1ff);
 }
 
@@ -57,7 +59,7 @@ p {
 	font-weight: 400;
 }
 
-.topNavbar {
+.navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -93,7 +95,7 @@ p {
 	}
 }
 
-.buttonPrimary {
+.button-primary {
 	padding: 24px 64px;
 	border-radius: 12px;
 	background-color: var(--primary-color);
@@ -104,7 +106,7 @@ p {
 	}
 }	
 
-.buttonNavbar {
+.button-navbar {
 	padding: 12px 32px;
 	border: none;
 }
@@ -132,25 +134,67 @@ p {
 	height: 90%;
 }
 
+.project-grid {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-row: auto auto;
+	grid-column-gap: 48px;
+  	grid-row-gap: 48px;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+}
+
+.project-img {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+/*.pill-container {
+	
+}*/
+
 .container {
 	width: 600px;
 }
 
 .form-group {
 	margin-bottom:1.5em;
+	&:focus-within {
+		transform:scale(1.02,1.02);
+		transition: all 0.5s;
+	}
 }
 
 .form-label {
 	display: block;
 	font-size:.75em;
+	opacity: 0;
+	transition: all 0.3s;
+	transform: translateX(-50px);
 }
 
-.form-control {
+.focused > .form-label {
+	transform: translateX(0px);
+	opacity: 1;
+}
+
+/* TBD - making it work: 
+	user-invalid {
+		border-color: var(--error);
+	}*/
+
+.form-input {
 	box-shadow: none;
 	border-radius: 0;
 	border-color: #ccc;
 	border-style: none none solid none;
 	width: 100%;
+	transition:all .6s;
 	&::placeholder{
 		color: #aaa;
 	}
@@ -159,7 +203,10 @@ p {
 		border-color: var(--primary-pressed);
 		outline: none;
 	}
-}
+	&:valid:focus {
+		border-color: var(--success);
+		}
+	}
 
 textarea {
 	resize: none;

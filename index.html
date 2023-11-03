@@ -5,17 +5,19 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="widthe=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="main.js"></script>
 	</head>
 	
 	<body>
 		<header>
-			<div class="topNavbar">
+			<div class="navbar">
 					<a href="#"><img src="images & icons/Ajanas logo.svg" style="height: 48px"></a>
 				<nav>
-					<a class="button buttonNavbar" href="#AboutMe">About Me</a>
-					<a class="button buttonNavbar" href="#MyProjects">My projects</a>
-					<a class="button buttonNavbar">Resume</a>
-					<a class="button buttonNavbar buttonPrimary" href="#Contact">Contact me</a>
+					<a class="button button-navbar" href="#AboutMe">About Me</a>
+					<a class="button button-navbar" href="#MyProjects">My projects</a>
+					<a class="button button-navbar">Resume</a>
+					<a class="button button-navbar button-primary" href="#Contact">Contact me</a>
 				</nav>
 			</div>
 			<div id="Hero">
@@ -26,7 +28,7 @@
 					<h1>Hello! My name is Antoni Janas.</h1>
 					<h2>I'm a <strong>Junior UX/UI Designer</strong></h2>
 					<br>
-					<a class="button buttonPrimary" href="#AboutMe">Find out more!</a>
+					<a class="button button-primary" href="#AboutMe">Find out more!</a>
 				</div>
 			</div>
 		</header>
@@ -42,7 +44,7 @@
 					at AGH dedicated to User Experience.</p>
 					<br>
 					<!-- TBD center this button -->
-					<a class="button buttonPrimary">See my projects</a> 
+					<a class="button button-primary">See my projects</a> 
 				</div>
 				<div style="float: right; flex: 4/12;">
 					<img src="images & icons/csux-ajanas.png" style="width: 240px;">
@@ -51,6 +53,28 @@
 		</section>
 		<section id="MyProjects">
 			<h1>My Projects</h1>
+			<div class="project-grid">
+				<div class="project">
+					<img class="project-img" src="images & icons/UXberries.png">
+					<h2>UXberries</h2>
+					<div class="pill-container">
+
+					</div>
+					<p>test</p>
+				</div>
+				<div class="project">
+					<img class="project-img" src="images & icons/Come Together.png">
+					<p>test</p>
+				</div>
+				<div class="project">
+					<img class="project-img" src="images & icons/Work.png">
+					<p>test</p>
+				</div>
+				<div class="project">
+					<img class="project-img" src="images & icons/KD.png">
+					<p>test</p>
+				</div>
+			</div>
 			<p> TBD </p>
 		</section>
 		<section id="Contact">
@@ -59,18 +83,18 @@
 				<form action="" method="post" class="form">
 					<div class="form-group">
 						<label for="name" class="form-label">Name:</label>
-						<input type="text" class="form-control" id="name" name="name" placeholder="Genezyp Kapen" tabindex="1" required>
+						<input type="text" class="form-input checked" id="name" name="name" placeholder="Name" tabindex="1" required>
 					</div>
 					<div class="form-group">
 						<label for="e-mail" class="form-label">Email:</label>
-						<input type="email" class="form-control" id="email" name="email" placeholder="genezyp.kapen@mail.com" tabindex="2" required>
+						<input type="email" class="form-input" id="email" name="e-mail" placeholder="e-mail" tabindex="2" required>
 					</div>
 					<div class="form-group">
 						<label for="message" class="form-label">Your message:</label>
-						<textarea class="form-control" rows="5" cols="50" id="message" name="message" placeholder="Write your message here" tabindex="3" required></textarea>
+						<textarea class="form-input" rows="5" cols="50" id="message" name="message" placeholder="Write your message here" tabindex="3" required></textarea>
 					</div>
 					<div>
-						<button type="submit" class="buttonPrimary">Send</button>
+						<button type="submit" class="button-primary" id="sendButton" onclick="formCheck()">Send</button>
 					</div>
 				</form>
 		</section>
