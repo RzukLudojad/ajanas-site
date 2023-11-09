@@ -5,6 +5,19 @@
   --error: rgb(201, 28, 28);
   --success: #14a514;
   --bg-gradient: linear-gradient(to right, white, #e9f1ff);
+  
+  /*
+  "UX(IA)" : #2d5487;
+  "UI" : #229145;
+  "User Research" : #b8276b;
+  "Service Design" : #799b37;
+  "Mobile" : #bf7822;
+  "Web" : #40a689;
+  "UX Writing" : #3a38a0;
+  "UTesting" : #a03082;
+  "Facilitation" : #8b8622;
+  "Management" : #973333; 
+   */
 }
 
 @font-face {
@@ -55,8 +68,12 @@ h2 {
 }
 
 p {
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 400;
+}
+
+.project-desc {
+	font-size: 14px;
 }
 
 .navbar {
@@ -85,7 +102,10 @@ p {
 	font-size: 16px;
 	background-color: transparent;
 	border-width: 1px;
+	border-style: solid;
 	border-color: var(--primary-color);
+	border-radius: 8px;
+	margin: auto;
 	scroll-behavior: smooth;
 	&:hover {color: var(--primary-hover);
 			transition: all 0.15s ease;
@@ -97,7 +117,6 @@ p {
 
 .button-primary {
 	padding: 24px 64px;
-	border-radius: 12px;
 	background-color: var(--primary-color);
 	color: white;
 	&:hover {color: white; background-color: var(--primary-hover);
@@ -150,7 +169,7 @@ p {
 .project {
 	display: flex;
 	flex-direction: column;
-	align-content: center;
+	align-items: center;
 	justify-content: space-between;
 }
 
@@ -159,9 +178,32 @@ p {
 	max-height: 200px;
 }
 
-/*.pill-container {
-	
-}*/
+.pill-containter {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-between;
+}
+
+.pill {
+	background-color: var(--primary-color);
+  	border: none;
+	border-radius: 20px;
+  	color: white;
+  	padding: 4px 20px;
+  	text-align: center;
+	font-size: 12px;
+  	text-decoration: none;
+  	display: inline-block;
+  	margin: 4px 2px;
+}
+
+.read-more {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+}
 
 .container {
 	width: 600px;
