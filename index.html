@@ -4,9 +4,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="widthe=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="main.js"></script>
+		<title> Main Page</title>
 	</head>
 	
 	<body>
@@ -16,7 +19,7 @@
 				<nav>
 					<a class="button button-navbar" href="#AboutMe">About Me</a>
 					<a class="button button-navbar" href="#MyProjects">My projects</a>
-					<a class="button button-navbar">Resume</a>
+					<a class="button button-navbar">Resume <span class="material-symbols-outlined">open_in_new</span></a>
 					<a class="button button-navbar button-primary" href="#Contact">Contact me</a>
 				</nav>
 			</div>
@@ -38,7 +41,7 @@
 			<h1>About Me</h1>
 			<br>
 			<div id="AboutMeFlex">
-				<div style= "float: left; flex: 8/12; flex-direction: column; justify-content: space-around;">
+				<div style= "float: left; flex: 8/12; max-width: 600px; flex-direction: column; justify-content: space-around;">
 					<h2>Who am I?</h2>
 					<p><strong>Product Design and Development graduate</strong> at <abbr><strong>AGH UST</strong></abbr> in Cracow.
 					<br>I spent last two years working as a UX Designer at Nokia.
@@ -46,7 +49,7 @@
 					at AGH dedicated to User Experience.</p>
 					<br>
 					<div class="c2a-wrap">
-						<a class="button button-primary">See my projects</a> 
+						<a class="button button-primary" href="#MyProjects">See my projects</a> 
 					</div>
 				</div>
 				<div style="float: right; flex: 4/12;">
@@ -63,13 +66,13 @@
 					<h2>UXberries</h2>
 					<div class="pill-container">
 						<p class="pill">Service Design</p>
-						<p class="pill"">Management</p>
+						<p class="pill">Management</p>
 						<p class="pill">Facilitation</p>
 					</div>
 					<p class="project-desc">An audit and enhancement of internal communication in my team.</p>
 					<div class="read-more">
 						<h3>Read more:</h3>
-						<a class="button">Case Study</a>
+						<a class="button">Case Study <span class="material-symbols-outlined">open_in_new</span></a>
 					</div>
 				</div>
 				<div class="project">
@@ -77,35 +80,35 @@
 					<h2>Come Together</h2>
 					<div class="pill-container">
 						<p class="pill">Mobile</p>
-						<p class="pill"">User Research</p>
+						<p class="pill">User Research</p>
 						<p class="pill">UX (IA)</p>
 						<p class="pill">UI</p>
 					</div>
 					<p class="project-desc">A matchmaking app for musicians. Interactive prototype designed using UCD process.</p>
 					<div class="read-more">
 						<h3>Read more:</h3>
-						<a class="button">Case Study</a>
+						<a class="button">Case Study <span class="material-symbols-outlined">open_in_new</span></a>
 					</div>
 				</div>
 				<div class="project">
 					<img class="project-img" src="images & icons/Work.png">
 					<h2>Communication at work</h2>
 					<div class="pill-container">
-						<p class="pill"">User Research</p>
+						<p class="pill">User Research</p>
 						<p class="pill">UX Writing</p>
 						<p class="pill">Facilitation</p>
 					</div>
 					<p class="project-desc">An audit and enhancement of internal communication in my team.</p>
 					<div class="read-more">
 						<h3>Read more:</h3>
-						<a class="button">Case Study</a>
+						<a class="button">Case Study <span class="material-symbols-outlined">open_in_new</span></a>
 					</div>
 				</div>
 				<div class="project">
 					<img class="project-img" src="images & icons/KD.png">
 					<h2>krakowdragons.pl</h2>
 					<div class="pill-container">
-						<p class="pill"">Web</p>
+						<p class="pill">Web</p>
 						<p class="pill">UX (IA)</p>
 						<p class="pill">UX Writing</p>
 						<p class="pill">UTesting</p>
@@ -113,33 +116,50 @@
 					<p class="project-desc">An audit and enhancement of internal communication in my team.</p>
 					<div class="read-more">
 						<h3>Read more:</h3>
-						<a class="button">Case Study</a>
+						<a class="button">Case Study <span class="material-symbols-outlined">open_in_new</span></a>
 					</div>
 				</div>
 			</div>
-			<p> TBD </p>
-			<script src="pill-color.js"></script>
+			<!-- sets pill colours coresponding to their content-->
+			<script src="pill-color.js"></script> 
 		</section>
 		<section id="Contact">
 			<h1>Contact me</h1>
-			<div class="container">	
-				<form action="" method="post" class="form">
-					<div class="form-group">
-						<label for="name" class="form-label">Name:</label>
-						<input type="text" class="form-input checked" id="name" name="name" placeholder="Name" tabindex="1" required>
-					</div>
-					<div class="form-group">
-						<label for="e-mail" class="form-label">Email:</label>
-						<input type="email" class="form-input" id="email" name="e-mail" placeholder="e-mail" tabindex="2" required>
-					</div>
-					<div class="form-group">
-						<label for="message" class="form-label">Your message:</label>
-						<textarea class="form-input" rows="5" cols="50" id="message" name="message" placeholder="Write your message here" tabindex="3" required></textarea>
-					</div>
-					<div>
-						<button type="submit" class="button button-primary" id="sendButton" onclick="formCheck()">Send</button>
-					</div>
-				</form>
+			<div id="ContactFlex">
+				<div class="container" style="flex:50%">
+					<a class="button button-contact" href="https://www.linkedin.com/in/antoni-janas-50a5051a3/" target=”_blank”><span class="fa fa-linkedin"></span>Antoni Janas</a>
+					<br>
+					<a class="button button-contact" href="https://github.com/a-janas" target=”_blank”><span class="fa fa-github"></span> a-janas</a>
+					<br>
+					<a class="button button-contact" href="mailto:antoniyanas@gmail.com"><span class="material-symbols-outlined">mail</span>antoniyanas@gmail.com</a>	
+				</div>
+				<div class="vl"></div>
+				<div class="container" style="flex:50%">
+					<!-- contact form using formsubmit.co api-->	
+					<form action="https://formsubmit.co/siemanokolanomnieboli@gmail.com" method="post" class="form">
+						<div class="form-group">
+							<label for="name" class="form-label">Name:</label>
+							<input type="text" class="form-input checked" id="name" name="name" placeholder="Your name" tabindex="1" required>
+						</div>
+						<div class="form-group">
+							<label for="email" class="form-label">Email:</label>
+							<input type="email" class="form-input" id="email" name="email" placeholder="E-mail adress" tabindex="2" required>
+						</div>
+						<div class="form-group">
+							<label for="subject" class="form-label">Subject:</label>
+							<input type="text" class="form-input" id="subject" name="_subject" placeholder="Subject (optional)" tabindex="3"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="message" class="form-label">Your message:</label>
+							<textarea class="form-input" rows="5" cols="50" id="message" name="message" placeholder="Write your message here" tabindex="3" required></textarea>
+						</div>
+						<input type="hidden" name="_next" value="/thankyou.html">
+						<div>
+							<button type="submit" class="button button-primary" id="sendButton" onclick="formCheck()">Send</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</section>
 		<footer>
 			<a class="button"> test </a>

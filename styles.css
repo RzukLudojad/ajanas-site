@@ -1,23 +1,10 @@
 :root {
-  --primary-color: #0c132c;
+  --primary: #0c132c;
   --primary-hover: #1c2a5c;
   --primary-pressed: #2f407b;
   --error: rgb(201, 28, 28);
   --success: #14a514;
   --bg-gradient: linear-gradient(to right, white, #e9f1ff);
-  
-  /*
-  "UX(IA)" : #2d5487;
-  "UI" : #229145;
-  "User Research" : #b8276b;
-  "Service Design" : #799b37;
-  "Mobile" : #bf7822;
-  "Web" : #40a689;
-  "UX Writing" : #3a38a0;
-  "UTesting" : #a03082;
-  "Facilitation" : #8b8622;
-  "Management" : #973333; 
-   */
 }
 
 @font-face {
@@ -38,7 +25,7 @@ body {
 	min-height: 100vh;
 	margin: 0px auto;
 	background-image: var(--bg-gradient);
-	color: var(--primary-color);
+	color: var(--primary);
 	font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -72,6 +59,18 @@ p {
 	font-weight: 400;
 }
 
+a {
+	text-decoration: none;
+	font-size: inherit;
+	color: inherit;
+}
+
+.material-symbols-outlined, .fa {
+	display: inline-flex;
+    vertical-align: bottom;
+	font-size: 20px;
+}
+
 .project-desc {
 	font-size: 14px;
 }
@@ -95,17 +94,21 @@ p {
 }
 
 .button {
+	display: inline-flex;
+	flex-direction: row;
+	gap: 8px;
+	justify-content: center;
+	align-items: center;
 	text-decoration: none;
-	color: var(--primary-color);
+	color: var(--primary);
 	padding: 12px 32px;
 	font-family: inherit;
 	font-size: 16px;
 	background-color: transparent;
 	border-width: 1px;
 	border-style: solid;
-	border-color: var(--primary-color);
+	border-color: var(--primary);
 	border-radius: 8px;
-	margin: auto;
 	scroll-behavior: smooth;
 	&:hover {color: var(--primary-hover);
 			transition: all 0.15s ease;
@@ -117,7 +120,7 @@ p {
 
 .button-primary {
 	padding: 24px 64px;
-	background-color: var(--primary-color);
+	background-color: var(--primary);
 	color: white;
 	&:hover {color: white; background-color: var(--primary-hover);
 	}
@@ -135,6 +138,10 @@ p {
 	border: none;
 }
  
+.button-contact {
+	justify-content: left;
+}
+
 #Hero {
 	display: flex;
 	flex-direction: row;
@@ -145,17 +152,15 @@ p {
 	height: 100vh;
 }
 
-/*#AboutMe {
-
-}*/
-
-#AboutMeFlex {
+#AboutMeFlex, #ContactFlex {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	align-content: space-between;
-	margin: 96px 0 0 96px;
+	justify-content: center;
+	gap: 32px;
 	height: 90%;
+	width: 100%;
 }
 
 .project-grid {
@@ -187,7 +192,7 @@ p {
 }
 
 .pill {
-	background-color: var(--primary-color);
+	background-color: var(--primary);
   	border: none;
 	border-radius: 20px;
   	color: white;
@@ -206,7 +211,15 @@ p {
 }
 
 .container {
-	width: 600px;
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+}
+
+.vl {
+		border-left: 1px solid var(--primary);
+		opacity: .6;
+		height: 320px;
 }
 
 .form-group {
@@ -220,15 +233,15 @@ p {
 .form-label {
 	display: block;
 	font-size:.75em;
-	opacity: 0;
+	/*opacity: 0;
 	transition: all 0.3s;
-	transform: translateX(-50px);
+	transform: translateX(-50px);*/
 }
 
-.focused > .form-label {
+/*.focused > .form-label {
 	transform: translateX(0px);
 	opacity: 1;
-}
+}*/
 
 .form-input {
 	box-shadow: none;
@@ -245,7 +258,7 @@ p {
 		border-color: var(--primary-pressed);
 		outline: none;
 	}
-	&:valid {
+	&:focus:valid {
 		border-color: var(--success) !important;
 		}
 	&:focus:invalid { /* might change it later on*/
@@ -255,15 +268,11 @@ p {
 
 textarea {
 	resize: none;
+	font-family: inherit;
 }
 
 #sendButton {
 	display: block;
 	margin: auto;
+	padding: 12px 32px;
 }
-
-/*form {
-	display: flex;
-	align-items: center;
-	align-content: space-around;
-}*/
