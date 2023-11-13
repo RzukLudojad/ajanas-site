@@ -19,48 +19,45 @@ html {
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+	width: 100%;
+	grid-template-columns: minmax(0,1fr), minmax(0,1040px), minmax(0,1fr);
 	min-height: 100vh;
 	background-image: var(--bg-gradient);
 	color: var(--primary);
 	font-family: 'Nunito Sans', sans-serif;
 }
 
-header {
-	background-color: red; /**/
-}
-
 header, section {
 	max-width: 1040px;
 	display: flex;
 	flex-direction: column;
-  	align-items: center;
+  	justify-self: center;
 }
 
  
 section {
-	background-color: green; /**/
   	justify-content: stretch;
 	min-height: 80vh;
-	padding: 0px 8px 0px 8px;
+	padding: 48px 0 48px 0;
 }
 
-/* why is everything bold without this? */
+.section-title {
+	text-align: center;
+}
+
 h1{
-	font-size: 32px;
+	font-size: 2rem;
 	font-weight: 200;
 }
 
 h2 {
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 200;
 }
 
 p {
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 400;
 }
 
@@ -73,24 +70,30 @@ a {
 .material-symbols-outlined, .fa {
 	display: inline-flex;
     vertical-align: bottom;
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 .project-desc {
-	font-size: 14px;
+	font-size: .875rem;
 }
 
 .navbar {
-	background-color: blue; /**/
-	display: flex;
-	justify-content: space-between;
+	width: 100% ;
+    margin: 0;
+	top: 0;
+	left: 0;
+    padding:8px;
+    display:grid;
+    grid-template-columns: 30% auto;
+	justify-content: space-around;
 	align-items: center;
 	position: fixed;
-	top: 0;
-	padding: 8px 32px 8px 32px;
-	/*background-image: var(--bg-gradient);*/
-	max-width: 1040px;
-	width: 100%;
+	background-image: var(--bg-gradient);
+}
+
+.navbar-buttons {
+	display: flex;
+	white-space: nowrap
 }
 
 .burger-icon {
@@ -113,7 +116,7 @@ a {
 	color: var(--primary);
 	padding: 12px 32px;
 	font-family: inherit;
-	font-size: 16px;
+	font-size: 1rem;
 	background-color: transparent;
 	border-width: 1px;
 	border-style: solid;
@@ -173,30 +176,28 @@ a {
 
 .project-grid {
 	display: grid;
-	grid-template-columns: auto auto;
-	grid-row: auto auto;
+	grid-template-columns: 1fr 1fr;
+	grid-row: 1fr 1fr;
 	grid-column-gap: 48px;
   	grid-row-gap: 48px;
 }
 
 .project {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	display: grid;
+	grid-template-rows: 200px;
+	text-align: center;
 }
 
 .project-img {
 	max-width: 200px;
 	max-height: 200px;
+	justify-self: center;
 }
 
 .pill-containter {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	align-content: center;
-	justify-content: space-between;
 }
 
 .pill {
@@ -205,8 +206,7 @@ a {
 	border-radius: 20px;
   	color: white;
   	padding: 4px 20px;
-  	text-align: center;
-	font-size: 12px;
+	font-size: .75rem;
   	text-decoration: none;
   	display: inline-block;
   	margin: 4px 2px;
@@ -215,6 +215,7 @@ a {
 .read-more {
 	display: flex;
 	flex-direction: row;
+	justify-self: center;
 	gap: 16px;
 }
 
@@ -231,7 +232,7 @@ a {
 }
 
 .form-group {
-	margin-bottom:1.5em;
+	margin-bottom: 1.5em;
 	&:focus-within {
 		transform:scale(1.02,1.02);
 		transition: all 0.5s;
@@ -240,7 +241,7 @@ a {
 
 .form-label {
 	display: block;
-	font-size:.75em;
+	font-size:.75rem;
 	/*opacity: 0;
 	transition: all 0.3s;
 	transform: translateX(-50px);*/
@@ -283,4 +284,9 @@ textarea {
 	display: block;
 	margin: auto;
 	padding: 12px 32px;
+}
+
+/*TABLET BREAKPOINT*/
+@media screen and (max-width: 960px){
+	
 }
