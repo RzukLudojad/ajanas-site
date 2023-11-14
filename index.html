@@ -9,40 +9,41 @@
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script src="main.js"></script>
+		
 		<title> Main Page</title>
 	</head>
 	
 	<body>
 		<header>
-			<div class="navbar">
-					<a href="#"><img src="images & icons/Ajanas logo.svg" style="height: 48px" title="Homepage" alt="Ajanas"></a>
-				<nav class="navbar-buttons">
-					<span class="material-symbols-outlined burger-icon">menu</span>
-					<a class="button button-navbar" href="#AboutMe">About Me</a>
-					<a class="button button-navbar" href="#MyProjects">My projects</a>
-					<a class="button button-navbar">Resume <span class="material-symbols-outlined">open_in_new</span></a>
-					<a class="button button-navbar button-primary" href="#Contact">Contact me</a>
-				</nav>
-			</div>
-			<div id="Hero">
-				<div style="float: left; flex: 5/12;">
-					<img src="images & icons/hero-photo.png" alt="" style= "width: 320px;">
-				</div>
-				<div style="float: right; flex: 7/12;">
-					<h1>Hello! My name is Antoni Janas.</h1>
-					<h2>I'm a <strong>Junior UX/UI Designer</strong></h2>
-					<br>
-					<div class="c2a-wrap">
-						<a class="button button-primary" href="#AboutMe">Find out more!</a>
-					</div>
-				</div>
-			</div>
+				<a href="#"><img src="images & icons/Ajanas logo.svg" style="height: 3rem;" title ="Homepage" alt="Ajanas"></a>
+			<nav class="navbar">
+				<span class="material-symbols-outlined burger-icon" id="menuIcon">menu</span>
+				<ul class="shown">
+					<li><a class="button button-navbar" href="#AboutMe">About Me</a></li>
+					<li><a class="button button-navbar" href="#MyProjects">My projects</a></li>
+					<li><a class="button button-navbar">Resume <span class="material-symbols-outlined">open_in_new</span></a></li>
+					<li><a class="button button-navbar button-primary" href="#Contact">Contact me</a></li>
+				</ul>
+			</nav>
 		</header>
+		<section id="Hero">
+			<div style="float: left; flex: 5/12;">
+				<img src="images & icons/hero-photo.png" alt="" style= "width: 20rem;">
+			</div>
+			<div style="float: right; flex: 7/12;">
+				<h1>Hello! My name is Antoni Janas.</h1>
+				<h2>I'm a <strong>Junior UX/UI Designer</strong></h2>
+				<br>
+				<div class="c2a-wrap">
+					<a class="button button-primary" href="#AboutMe">Find out more!</a>
+				</div>
+			</div>
+		</section>
 		<section id="AboutMe">
 			<h1 class="section-title">About Me</h1>
 			<br>
 			<div id="AboutMeFlex">
-				<div style= "float: left; flex: 8/12; max-width: 600px; flex-direction: column; justify-content: space-around;">
+				<div style= "float: left; flex: 8/12; max-width: 37.5rem; flex-direction: column; justify-content: space-around;">
 					<h2>Who am I?</h2>
 					<p><strong>Product Design and Development graduate</strong> at <abbr><strong>AGH UST</strong></abbr> in Cracow.
 					<br>I spent last two years working as a UX Designer at Nokia.
@@ -125,19 +126,23 @@
 			<script src="pill-color.js"></script> 
 		</section>
 		<section id="Contact">
-			<h1 class="section-title">Contact me</h1>
-			<div id="ContactFlex">
-				<div class="container" style="flex: auto">
-					<a class="button button-contact" href="https://www.linkedin.com/in/antoni-janas-50a5051a3/" target=”_blank”><span class="fa fa-linkedin"></span>Antoni Janas</a>
-					<br>
-					<a class="button button-contact" href="https://github.com/a-janas" target=”_blank”><span class="fa fa-github"></span> a-janas</a>
-					<br>
-					<a class="button button-contact" href="mailto:antoniyanas@gmail.com"><span class="material-symbols-outlined">mail</span>antoniyanas@gmail.com</a>	
+			<h1 class="section-title">Contact</h1>
+			<div id="contactGrid">
+				<div  class="container">
+				<h2 style="text-align: center;" id="findMeTitle">Find me on:</h2>
+					<div id="findMe">
+						<a class="button button-contact" href="https://www.linkedin.com/in/antoni-janas-50a5051a3/" target=”_blank”><span class="fa fa-linkedin"></span>Antoni Janas</a>
+						<br>
+						<a class="button button-contact" href="https://github.com/a-janas" target=”_blank”><span class="fa fa-github"></span> a-janas</a>
+						<br>
+						<a class="button button-contact" href="mailto:antoniyanas@gmail.com"><span class="material-symbols-outlined">mail</span>antoniyanas@gmail.com</a>	
+					</div>
 				</div>
 				<hr class="vl"></hr>
-				<div class="container" style="flex: auto">
+				<div class="container">
+					<h2 style="text-align: center" id="contactTitle">Message me:</h2>
 					<!-- contact form using formsubmit.co api-->	
-					<form action="https://formsubmit.co/siemanokolanomnieboli@gmail.com" method="post" class="form">
+					<form action="https://formsubmit.co/siemanokolanomnieboli@gmail.com" method="post" class="form" id="contactForm">
 						<div class="form-group">
 							<label for="name" class="form-label">Name:</label>
 							<input type="text" class="form-input checked" id="name" name="name" placeholder="Your name" tabindex="1" required>
@@ -166,5 +171,6 @@
 			<a class="button"> test </a>
 			<h2>tu będzie stopka</h2>
 		</footer>
+		<script src="hamburger.js"></script>
 	</body>	
 </html>
