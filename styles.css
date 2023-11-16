@@ -25,23 +25,34 @@ html {
 }
 
 body {
-	display: grid;
-	width: 100%;
-	grid-template-columns: minmax(0,2rem), auto, minmax(0,2rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
 	min-height: 100vh;
 	background-image: var(--bg-gradient);
 	color: var(--primary);
 	font-family: 'Nunito Sans', sans-serif;
 }
+
+body > * {
+	max-width: 1024px;
+	align-self: center;
+}
  
 section {
-  	justify-content: stretch;
-	min-height: 80vh;
-	padding: 3rem 0 3rem 0;
-	max-width: 1040px;
 	display: flex;
 	flex-direction: column;
-  	justify-self: center;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	min-height: 100svh; /* 80vh */
+	padding: 8rem 2rem;
+}
+
+section > * {
+	justify-content: center;
 }
 
 .section-title {
@@ -81,12 +92,11 @@ a {
 
 header {
 	width: 100%;
+	grid-column: 2/3;
     padding: .5rem 2rem .5rem 2rem;
 	top: 0;
-	left: 0;
-    display: grid;
-	grid-auto-flow: column;
-    grid-template-columns: auto auto;
+    display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	position: fixed;
@@ -95,9 +105,10 @@ header {
 }
 
 .navbar {
-	/*display: flex;*/
-	display: inline grid;
-  	grid-template-rows: repeat(4, minmax(0, 1fr));
+	float: right;
+	width: fit-content;
+	display: inline-grid;
+  	grid-template-columns: repeat(4, auto);
 	text-wrap: nowrap;
   	padding: 0 1rem;
 }
@@ -138,6 +149,7 @@ header {
 	border-color: var(--primary);
 	border-radius: .5rem;
 	scroll-behavior: smooth;
+	white-space: nowrap;
 	&:hover {
 			color: var(--primary-hover);
 			font-weight: 600;
@@ -150,7 +162,7 @@ header {
 }
 
 .button-primary {
-	padding: 2.5rem 4rem;
+	padding: 1.5rem 4rem;
 	background-color: var(--primary);
 	border-radius: .5rem;
 	color: white;
@@ -181,23 +193,20 @@ header {
 	justify-content: left;
 }
 
-#Hero {
+#hero {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	align-content: space-between;
-	height: 100vh;
+	height: 100svh;
 }
 
-#AboutMeFlex{
+#aboutMeFlex{
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	align-content: space-between;
+	align-items: space-around;
 	justify-content: center;
-	gap: 2rem;
-	height: 90%;
 }
 
 
@@ -250,7 +259,6 @@ header {
 
 .project {
 	display: grid;
-	grid-template-rows: 12.5rem;
 	text-align: center;
 }
 
@@ -381,6 +389,13 @@ textarea {
 		z-index: -1;
 	}
 
+	.button {
+		padding: 1.5rem 3rem; 
+		&:hover{
+			padding: 1.5rem 2.75rem;
+		}
+	}
+
 	.navbar > ul > li {
 		display: block;
 		line-height: 2rem;
@@ -391,7 +406,28 @@ textarea {
 		background-color: red;
 	}
 
+	.project-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
 }
 
 @media screen and (max-width: 480px){
+	
+	.button {
+		padding: 1.25rem 2rem; 
+		&:hover{
+			padding: 1.25rem 1.88rem;
+		}
+	}
+
+	#hero {
+		flex-direction: column;
+	}
+
+	#aboutMePhoto {
+		display: none;
+	}
+
 }
