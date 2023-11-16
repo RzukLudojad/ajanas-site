@@ -5,7 +5,6 @@ function menuShow (){
     if (hamburger.innerHTML === "menu"){
         menu.style.transform = "translateY(0px)";
         menu.style.opacity = 1;
-        /*menu.style.display = "inline";*/
         hamburger.innerHTML = "close";
     }
     else {
