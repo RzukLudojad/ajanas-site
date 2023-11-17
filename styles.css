@@ -7,162 +7,134 @@
     --error: rgb(201, 28, 28);
     --success: #14a514;
     --bg-gradient: linear-gradient(to right, white, #e9f1ff);
+    --dropdown-gradient: linear-gradient(to right, rgba(235, 242, 255, 0.8), rgba(255, 255, 255, 0.8));
   }
   
-  @font-face {
-      font-family: Nunito Sans;
-      font-style: normal;
-      font-weight: 400;
-      src: url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
-  }
+@font-face {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+}
   
-  html {
-      scroll-behavior: smooth;
-  }
-  
-  * {
-      text-decoration: none;
-      list-style: none;
-      box-sizing: border-box;
-  }
-  
-  body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
-      min-height: 100vh;
-      background-image: var(--bg-gradient);
-      color: var(--primary);
-      font-family: 'Nunito Sans', sans-serif;
-  }
-  
-  body > * {
-      max-width: 1024px;
-      align-self: center;
-  }
-   
-  section {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      min-height: 100svh; /* 80vh */
-      padding: 8rem 2rem;
-  }
-  
-  section > * {
-      justify-content: center;
-  }
-  
-  .section-title {
-      text-align: center;
-  }
-  
-  h1{
-      font-size: 2rem;
-      font-weight: 200;
-  }
-  
-  h2 {
-      font-size: 1.75rem;
-      font-weight: 200;
-  }
-  
-  p {
-      font-size: 1rem;
-      font-weight: 400;
-  }
-  
-  a {
-      text-decoration: none;
-      font-size: inherit;
-      color: inherit;
-  }
-  
-  .material-symbols-outlined, .fa {
-      display: inline-flex;
-      vertical-align: bottom;
-      font-size: 1.25rem;
-  }
-  
-  .project-desc {
-      font-size: .875rem;
-  }
-  
-  header {
-      width: 100%;
-      grid-column: 2/3;
-      padding: .5rem 2rem .5rem 2rem;
-      top: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      background-image: var(--bg-gradient);
-      z-index: 1;
-  }
-  
-  .navbar {
-      float: right;
-      width: fit-content;
-      display: inline-grid;
-        grid-template-columns: repeat(4, auto);
-      text-wrap: nowrap;
-        padding: 0 1rem;
-  }
-  
-  .navbar > ul {
-    display: inline;
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    background-image: var(--bg-gradient);
+    color: var(--primary);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body > * {
+    max-width: 1024px;
+    align-self: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 100svh;
+    padding: 8rem 2rem;
+}
+
+section > * {
+    justify-content: center;
+}
+
+.section-title {
+    text-align: center;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 200;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    font-size: inherit;
+    color: inherit;
+}
+
+.material-symbols-outlined, .fa {
+    display: inline-flex;
+    vertical-align: bottom;
+    font-size: 1.25rem;
+}
+
+.project-desc {
+    font-size: .875rem;
+}
+
+header {
+    width: 100%;
+    grid-column: 2/3;
+    padding: .5rem 2rem .5rem 2rem;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-image: var(--bg-gradient);
+    z-index: 1; /*idk why mobile menu still pops up before this*/
+}
+
+.navbar {
+    float: right;
+    width: fit-content;
+    display: inline-grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.navbar > ul {
+    display: inline block;
     opacity: 0;
     position: fixed;
     top: 2rem;
     left: 0;
     width: 100%;
-    background-image: var(--bg-gradient);
-    padding: 1rem 0 1rem 0;
+    background-image: var(--dropdown-gradient);
     text-align: center;
     transform: translateY(-20px);
     transition: all .3s;
     z-index: -1;
-  }
+}
 
-  .burger-icon {
+.burger-icon {
     float: right;
     display: block;
     align-self: center;
     font-size: 2rem;
     cursor: pointer;
     transition: all .5s;
-  }
-  
-  .dropdown {
-    display: flex;
-    position: static;
-    left: auto;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dropdown {
-    display: flex;
-    position: static;
-    left: auto;
-    flex-direction: column;
-    align-items: center;
-}
-  
-#projects:not(:hover) .dropdown {
-    display: none;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
 }
 
 .button {
@@ -215,12 +187,29 @@
 
 .button-navbar {
     width: 9rem;
-    padding: .75rem 2rem;
+    padding: .75rem 2rem !important;
     border: none;
     &:hover{
         padding: .75rem 2rem; /*temporary fix for the changing size on hover*/
         font-weight: 600;
     }
+}
+
+ul {
+    padding-left: 0;
+  }
+
+.dropdown {
+    display: flex;
+    border-radius: 0 0 .5rem .5rem;
+    padding: 0 2rem ;
+    flex-direction: column;
+}
+
+.dropdown > * {
+    display: block;
+    padding: none;
+    align-self: center;
 }
 
 .button-contact {
@@ -402,15 +391,18 @@ textarea {
         display: none;
     }
 
+
     .navbar > ul {
-        display: grid;
+        float: right;
+        display: inline-grid;
+        position: static;
         grid-template-columns: repeat(4, auto);
         opacity: 1; 
-        position: static;
         background-image: none;
         padding: 0rem 1rem;
         text-wrap: nowrap;
         transform: translateY(0px);
+        z-index: 1;
     }
 
     .navbar > ul > li {
@@ -418,24 +410,27 @@ textarea {
     }
 
     .dropdown {
-        display: grid;
-        grid-template-columns: minmax(0,1fr);
+        display: flex;
         align-items: flex-start;
         position: absolute;
-        gap: 2rem;
-        padding: 1rem 0rem 2rem 0rem;
+        margin-left:-2rem; /*temporary*/
+        background-image: var(--dropdown-gradient);
     }
-
-    #hero {
-        flex-direction: row;
+    
+    .dropdown > * {
+        padding: none;
     }
 
     #projects:not(:hover) .dropdown {
         display: none;
     }
 
-    .button {
-        padding: 1.5rem 3rem; 
+    #hero {
+        flex-direction: row;
+    }
+
+    .button-primary {
+        padding: 1.5rem 3rem;
         &:hover{
             padding: 1.5rem 2.75rem;
         }
@@ -444,11 +439,6 @@ textarea {
     .navbar > ul > li {
         display: block;
         line-height: 2rem;
-    }
-
-    .navbar & .ul .shown {
-        display: inline;
-        background-color: red;
     }
 
     .project-grid {
@@ -465,10 +455,10 @@ textarea {
         font-size: 16px;
     }
 
-    .button {
-        padding: .75rem 2rem; 
+    .button-primary {
+        padding: 1.5rem 4rem;
         &:hover{
-            padding: .75rem 1.87rem;;
+            padding: 1.5rem 2.75rem;
         }
     }
 
