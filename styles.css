@@ -278,7 +278,7 @@ ul {
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-row: 1fr 1fr;
     grid-column-gap: 3rem;
     grid-row-gap: 3rem;
@@ -421,6 +421,10 @@ textarea {
         padding: none;
     }
 
+    #aboutMePhoto {
+        display: inline; /*check that later*/
+    }
+
     #projects:not(:hover) .dropdown {
         display: none;
     }
@@ -443,7 +447,7 @@ textarea {
 
     .project-grid {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
 }
