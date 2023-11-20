@@ -1,0 +1,38 @@
+.project-title-img {
+    display: relative;
+
+}
+
+#uxbTitle {
+    background-image: url("../images & icons/background/UXb title.png");
+    color: white;
+    height: 100svh;
+    text-align: left;
+}
+
+.slide-title-container {
+    display: grid;
+    align-self: start;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "num title"
+                        "num sub";
+    justify-content: center;
+    max-height: 5rem; /*idk about this*/
+}
+
+.slide-number {
+    grid-area: num;
+    align-self: center;
+    font-size: 4.75rem;
+    opacity: .25;
+}
+
+.slide-title {
+    grid-area: title;
+    margin: .25rem 0;
+}
+
+.slide-subtitle {
+    grid-area: sub;
+    margin: .5rem 0;
+}
