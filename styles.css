@@ -40,7 +40,7 @@ body {
 }
 
 body > * {
-    max-width: 1024px;
+    width: min(100%, 1200px);
     align-self: center;
 }
 
@@ -48,14 +48,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
     width: 100%;
     min-height: 100svh;
     padding: 8rem 2rem;
-}
-
-section > * {
-    justify-content: center;
 }
 
 .section-title {
@@ -102,15 +97,16 @@ header {
     top: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed;
     background-image: var(--bg-gradient);
     z-index: 1; /*idk why mobile menu still pops up before this*/
 }
 
-header-navbar{
-    width: 100%;
+header-navbar, header-navbar-project {
+    width: min(100%, 1024px);
+    align-self: center;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -128,11 +124,10 @@ header-navbar{
     display: inline block;
     opacity: 0;
     position: fixed;
-    top: 2rem;
-    left: 0;
-    width: 100%;
+    padding: 2rem;
+    right: 0;
     background-image: var(--dropdown-gradient);
-    text-align: center;
+    text-align: right;
     transform: translateY(-20px);
     transition: all .3s;
     z-index: -1;
@@ -149,6 +144,7 @@ header-navbar{
 
 .button {
     display: inline-flex;
+    box-sizing: border-box !important;
     flex-direction: row;
     gap: .5rem;
     justify-content: center;
@@ -167,8 +163,9 @@ header-navbar{
     white-space: nowrap;
     &:hover {
         color: var(--primary-hover);
-        font-weight: 600;
-        padding: 1.25rem 1.88rem; /*temporary fix for the changing size on hover*/
+        text-shadow: .5px 0 0, -.5px 0 0;
+        /*font-weight: 600;
+        padding: 1.25rem 1.88rem; temporary fix for the changing size on hover*/
         transition: all 0.15s ease;
     }
     &:active {color: var(--primary-pressed);
@@ -182,7 +179,7 @@ header-navbar{
     border-radius: .5rem;
     color: white;
     &:hover {
-        padding: 1.5rem 3.75rem; /*temporary fix for the changing size on hover*/
+        /*padding: 1.5rem 3.75rem; temporary fix for the changing size on hover*/
         color: white; background-color: var(--primary-hover);
     }
     &:active {
@@ -196,13 +193,13 @@ header-navbar{
 }
 
 .button-navbar {
-    width: 9rem;
+
     padding: .75rem 2rem !important;
     border: none;
+    /*width: 9rem;
     &:hover{
-        padding: .75rem 2rem; /*temporary fix for the changing size on hover*/
         font-weight: 600;
-    }
+    }*/
 }
 
 ul {
@@ -211,6 +208,7 @@ ul {
 
 .dropdown {
     display: flex;
+    width: 35%; /*idk*/
     border-radius: 0 0 .5rem .5rem;
     padding: 0 2rem ;
     flex-direction: column;
@@ -219,7 +217,7 @@ ul {
 .dropdown > * {
     display: block;
     padding: none;
-    align-self: center;
+    align-self: flex-start;
 }
 
 .button-contact {
@@ -249,21 +247,16 @@ ul {
   
 #contactGrid {
     display: grid;
-    grid-template-columns: 1fr min-content 1fr;
-    grid-template-rows: min-content max-content;
-    grid-template-areas: 
-                        "a1 sep b1"
-                        "a2 sep b2";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     gap: 2rem;
     align-items: top;
     justify-content: center;
 }
 
 .vl {
-    grid-area: sep;
-    border-left: 1px solid var(--primary);
-    opacity: .6;
-    height: 100%;
+    border-top: 1px solid var(--primary);
+    width: 100%;
 }
   
 #findMeTitle {
@@ -275,7 +268,14 @@ ul {
     display: flex;
     flex-direction: column;
     flex-grow: .75;
+    padding-bottom: 1.5rem;
     justify-content: center;
+}
+
+
+#contact{
+    align-items: center;
+    padding: 2rem;
 }
 
 #contactTitle {
@@ -406,10 +406,11 @@ textarea {
         float: right;
         display: inline-grid;
         position: static;
+        text-align: center;
         grid-template-columns: repeat(4, auto);
+        padding: 0;
         opacity: 1; 
         background-image: none;
-        padding: 0rem 1rem;
         text-wrap: nowrap;
         transform: translateY(0px);
         z-index: 1;
@@ -428,7 +429,7 @@ textarea {
     }
     
     .dropdown > * {
-        padding: none;
+        align-self: center;
     }
 
     #aboutMePhoto {
@@ -445,9 +446,9 @@ textarea {
 
     .button-primary {
         padding: 1.5rem 3rem;
-        &:hover{
+        /*&:hover{
             padding: 1.5rem 2.75rem;
-        }
+        }*/
     }
 
     .navbar > ul > li {
@@ -458,6 +459,25 @@ textarea {
     .project-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    #contactGrid {
+        display: grid;
+        grid-template-columns: 1fr min-content 1fr;
+        grid-template-rows: min-content max-content;
+        grid-template-areas: 
+                            "a1 sep b1"
+                            "a2 sep b2";
+        gap: 2rem;
+        align-items: top;
+        justify-content: center;
+    }
+    
+    .vl {
+        grid-area: sep;
+        border-left: 1px solid var(--primary);
+        opacity: .6;
+        height: 100%;
     }
 
 }
@@ -472,7 +492,7 @@ textarea {
     .button-primary {
         padding: 1.5rem 4rem;
         &:hover{
-            padding: 1.5rem 2.75rem;
+            /*padding: 1.5rem 2.75rem;*/
         }
     }
 

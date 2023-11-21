@@ -1,23 +1,86 @@
+section {
+    width: 100%;
+    padding: 0;
+}
+
+section.title {
+    padding: 2rem;
+    align-items: left;
+}
+
 .project-title-img {
     display: relative;
+}
 
+.slides {
+    display: grid;
+    grid-template-columns: auto min(33%, 640px);
+    grid-template-rows: min(100vh, min-content);
+    grid-template-areas: "content nav";
+}
+
+.slide-content {
+    padding-left: 2rem;
+}
+
+#left-side {
+    grid-area: content;
+}
+
+#right-side {
+    grid-area: nav;
+    width: 100%;
+    height: 100svh;
+    position: sticky;
+    top: 5rem;
+}
+
+.side-menu {
+    position: sticky;
+    display: flexbox;
+    flex-direction: column;
+    text-wrap: nowrap;
+    text-align: right;
+    padding: 2rem;
+    line-height: min(4rem, 10svh);
+    color: white;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    float: right;
+    background-image: url("../images & icons/UXberries/Rectangle\ 2.png");
+    background-size: cover;
 }
 
 #uxbTitle {
-    background-image: url("../images & icons/background/UXb title.png");
+    background-image: url("../images & icons/UXberries/UXb title.png");
+    background-size: cover;
     color: white;
     height: 100svh;
     text-align: left;
 }
 
-.slide-title-container {
+#uxb-01 {
     display: grid;
-    align-self: start;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-areas: "num title"
-                        "num sub";
-    justify-content: center;
+    align-items: center;
+}
+
+#uxb-01 img {
+    max-width: 20rem;
+}
+
+.primary-title {
+    background-color: white;
+    border: none;
+}
+
+.slide-title-container {
+    display: flex;
     max-height: 5rem; /*idk about this*/
+    gap: .75rem;
+    margin-top: 8rem;
 }
 
 .slide-number {
@@ -35,4 +98,50 @@
 .slide-subtitle {
     grid-area: sub;
     margin: .5rem 0;
+}
+
+.accordion .exp-content {
+    position: relative;
+}
+
+accordion .exp-content .label {
+    position: relative;
+}
+    /*&::before {
+        content: '+';
+        position: absolute;
+        right: 20px;
+    }
+}
+
+.accordion .exp-content.active .label::before {
+    content: '-';
+}*/
+
+.exp-content .chevron {
+    font-size: 1.25em;
+    transition: all .3s;
+}
+
+.exp-content.active .chevron {
+    transform: rotate(180deg);
+}
+
+.exp-content .content {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+    overflow-y: auto;
+}
+
+.exp-content.active .content {
+    height: fit-content;
+    padding: 0 2rem;
+}
+
+#uxb-02-acc {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    text-wrap: nowrap;
 }
