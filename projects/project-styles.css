@@ -1,6 +1,7 @@
 section {
     width: 100%;
     padding: 0;
+    box-sizing: border-box;
 }
 
 section.title {
@@ -8,23 +9,30 @@ section.title {
     align-items: left;
 }
 
+/* SLIDES */
+
 .project-title-img {
     display: relative;
 }
 
+
 .slides {
     display: grid;
-    grid-template-columns: auto min(33%, 640px);
-    grid-template-rows: min(100vh, min-content);
+    min-width: none;
+    max-width: 100%;
+    grid-template-columns: 70% 30%; /*couldn't come up with anything else that would work */
+    grid-template-columns: minmax(80%, min-content) minmax(20%, 640px)%;
+    gap:0;
+    grid-template-rows: min(100svh, min-content);
     grid-template-areas: "content nav";
-}
-
-.slide-content {
-    padding-left: 2rem;
 }
 
 #left-side {
     grid-area: content;
+}
+
+.slide-content {
+    padding: 2rem;
 }
 
 #right-side {
@@ -45,7 +53,7 @@ section.title {
     line-height: min(4rem, 10svh);
     color: white;
     right: 0;
-    width: 100%;
+    box-sizing: border-box;
     height: 100%;
     float: right;
     background-image: url("../images & icons/UXberries/Rectangle\ 2.png");
@@ -62,9 +70,25 @@ section.title {
 
 #uxb-01 {
     display: grid;
+    /*grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);*/
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
+    max-width: 100%;
+    gap:1rem;
+}
+
+.img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+.img-wrap img {
+    object-fit: contain;
+    height:100%;
+    width:100%;
 }
 
 #uxb-01 img {
@@ -100,6 +124,8 @@ section.title {
     margin: .5rem 0;
 }
 
+/* ACCORDION */
+
 .accordion .exp-content {
     position: relative;
 }
@@ -107,16 +133,6 @@ section.title {
 accordion .exp-content .label {
     position: relative;
 }
-    /*&::before {
-        content: '+';
-        position: absolute;
-        right: 20px;
-    }
-}
-
-.accordion .exp-content.active .label::before {
-    content: '-';
-}*/
 
 .exp-content .chevron {
     font-size: 1.25em;
@@ -135,6 +151,11 @@ accordion .exp-content .label {
     overflow-y: auto;
 }
 
+.points {
+    list-style-type: disc !important;
+    line-height: 2rem;
+}
+
 .exp-content.active .content {
     height: fit-content;
     padding: 0 2rem;
@@ -145,3 +166,23 @@ accordion .exp-content .label {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     text-wrap: nowrap;
 }
+
+/* TABS */
+
+.tabs > * {
+    font-size: 1.5rem;
+}
+
+[role="tablist"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    display: flex;
+  }
+  
+  [aria-selected="true"] {
+    text-decoration-thickness: .25em;
+    text-underline-offset: .5em;
+    color: var(--primary-pressed);
+  }
