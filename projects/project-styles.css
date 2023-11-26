@@ -4,9 +4,16 @@ section {
     box-sizing: border-box;
 }
 
-section.title {
-    padding: 2rem;
-    align-items: left;
+section.title > * {
+    width: 100%;
+    max-width: 1024px;
+}
+
+.title-c2a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 4rem 2rem;
 }
 
 /* SLIDES */
@@ -19,20 +26,20 @@ section.title {
 .slides {
     display: grid;
     min-width: none;
-    max-width: 100%;
     grid-template-columns: 70% 30%; /*couldn't come up with anything else that would work */
-    grid-template-columns: minmax(80%, min-content) minmax(20%, 640px)%;
-    gap:0;
+    grid-template-columns: minmax(80%, min-content) minmax(20%, 640px);
+    gap: 2rem;
     grid-template-rows: min(100svh, min-content);
     grid-template-areas: "content nav";
 }
 
 #left-side {
     grid-area: content;
+    
 }
 
-.slide-content {
-    padding: 2rem;
+.slide-content { /* together with slide's number and title */
+    margin: 2rem;
 }
 
 #right-side {
@@ -56,16 +63,47 @@ section.title {
     box-sizing: border-box;
     height: 100%;
     float: right;
-    background-image: url("../images & icons/UXberries/Rectangle\ 2.png");
+    
     background-size: cover;
 }
 
-#uxbTitle {
-    background-image: url("../images & icons/UXberries/UXb title.png");
+.side-menu#uxb {
+    background-image: url("../images & icons/UXberries/Rectangle\ 2.png");
+}
+
+.side-menu#ct {
+    background-image: url("../images & icons/Come\ Together/Rectangle\ 2.png");
+}
+
+.titleSlide {
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
     background-size: cover;
     color: white;
     height: 100svh;
     text-align: left;
+}
+
+#uxbTitle {
+    background-image: url("../images & icons/UXberries/UXb title.png");
+}
+
+#ctTitle {
+    background-image: url("../images & icons/Come Together/CTtitle.png");
+}
+
+#workTitle {
+    background-image: url("../images & icons/Work/worktitle.png");
+}
+
+#kdTitle {
+    background-image: url("../images & icons/krakowdragons/KDtitle.png");
+}
+
+.photo-cred {
+    position: relative;
+    /*tbd*/
 }
 
 #uxb-01 {
@@ -98,6 +136,8 @@ section.title {
 .primary-title {
     background-color: white;
     border: none;
+    padding: 2rem 4rem;
+    font-size: 1.25rem;
 }
 
 .slide-title-container {
@@ -130,7 +170,7 @@ section.title {
     position: relative;
 }
 
-accordion .exp-content .label {
+.accordion .exp-content .label {
     position: relative;
 }
 
